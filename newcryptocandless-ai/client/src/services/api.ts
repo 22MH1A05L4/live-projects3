@@ -1,4 +1,4 @@
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://live-projects33.onrender.com';
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://live-projects33.onrender.com/api';
 
 // API Service for backend communication
 export const apiService = {
