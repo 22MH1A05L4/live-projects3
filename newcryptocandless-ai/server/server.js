@@ -7,7 +7,13 @@ const app = express();
 const PORT = config.PORT;
 
 // Middleware
-const allowedOrigins = config.CORS_ORIGIN;
+
+
+const allowedOrigins = [
+  process.env.FRONTEND_URL,
+  'http://localhost:3000', // local dev
+  'https://live-projects37-git-main-dhanushs-projects-45c3fd6e.vercel.app' // your Vercel deploy
+];
 
 app.use(cors({
   origin: (origin, callback) => {
@@ -18,6 +24,7 @@ app.use(cors({
   },
   credentials: true
 }));
+
 
 app.use(express.json());
 
