@@ -18,6 +18,7 @@ module.exports = {
   CORS_ORIGIN: process.env.FRONTEND_URL,
 
   
+  
   // API Endpoints
   YAHOO_FINANCE_BASE_URL: 'https://query1.finance.yahoo.com',
   COINGECKO_BASE_URL: 'https://api.coingecko.com/api/v3',
