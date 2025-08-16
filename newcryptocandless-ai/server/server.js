@@ -7,10 +7,18 @@ const app = express();
 const PORT = config.PORT;
 
 // Middleware
+const allowedOrigins = config.CORS_ORIGIN;
+
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'https://live-projects37-etio86gp2-dhanushs-projects-45c3fd6e.vercel.app',
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    }
+    return callback(new Error('Not allowed by CORS'));
+  },
   credentials: true
 }));
+
 app.use(express.json());
 
 // Routes

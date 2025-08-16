@@ -15,7 +15,10 @@ module.exports = {
   RATE_LIMIT_MAX_REQUESTS: 100,
   
   // CORS
-  CORS_ORIGIN: process.env.FRONTEND_URL,
+   CORS_ORIGIN: [
+    process.env.FRONTEND_URL,                // your Vercel frontend
+    'http://localhost:3000'                  // local testing
+  ],
 
   
   
