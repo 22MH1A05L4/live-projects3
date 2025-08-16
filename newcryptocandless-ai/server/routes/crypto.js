@@ -2,6 +2,10 @@ const express = require('express');
 const axios = require('axios');
 const router = express.Router();
 
+router.get('/', (req, res) => {
+  res.json({ message: 'crypto route working ✅' });
+});
+
 // Get crypto data from CoinGecko
 router.get('/search/:symbol', async (req, res) => {
   try {
